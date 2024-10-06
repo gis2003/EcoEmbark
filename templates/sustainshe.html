@@ -13,7 +13,7 @@
             <a href="/knowledge-sharing">Knowledge Sharing</a>
             <a href="/case-studies">Case Studies</a>
             <a href="/profile">Profile</a>
-            <a href="/sustainshe">SustainShe</a> <!-- New SustainShe section -->
+            <a href="/sustainshe">SustainShe</a>
         </nav>
         <h1>SustainShe: Empowering Women in Sustainability</h1>
         <p>Explore resources, success stories, and opportunities for women in climate action and sustainability.</p>
@@ -43,6 +43,7 @@
             <ul>
                 <li><a href="https://www.unwomen.org/en" target="_blank">UN Women Initiatives</a></li>
                 <li><a href="https://www.womenforclimate.org/" target="_blank">Women for Climate Leadership</a></li>
+                {% for link in sustain_she_links['empowerment_resources'] %}
                     <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
                 {% endfor %}
             </ul>
@@ -53,7 +54,7 @@
             <p>Learn about women making a difference in climate action:</p>
             <ul>
                 <li><a href="https://www.climateaction.org/women" target="_blank">Women Leading the Fight Against Climate Change</a></li>
-                {% for link in sustain_she_links['success_stories'] %}  <!-- Updated key -->
+                {% for link in sustain_she_links['success_stories'] %}
                     <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
                 {% endfor %}
             </ul>
@@ -63,7 +64,7 @@
             <h2>Upcoming Events</h2>
             <ul>
                 <li><a href="https://www.eventbrite.com/" target="_blank">Women in Climate Leadership Webinar</a></li>
-                {% for link in sustain_she_links['upcoming_events'] %}  <!-- Updated key -->
+                {% for link in sustain_she_links['upcoming_events'] %}
                     <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
                 {% endfor %}
             </ul>
@@ -74,7 +75,7 @@
             <ul>
                 <li><a href="https://www.coursera.org/" target="_blank">Coursera: Sustainability Courses for Women</a></li>
                 <li><a href="https://www.edx.org/" target="_blank">edX: Gender and Climate Change Programs</a></li>
-                {% for link in sustain_she_links['educational_resources'] %}  <!-- Updated key -->
+                {% for link in sustain_she_links['educational_resources'] %}
                     <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
                 {% endfor %}
             </ul>
@@ -86,3 +87,4 @@
     </footer>
 </body>
 </html>
+
