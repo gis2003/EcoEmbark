@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Knowledge Sharing - Climate, Gender & Sustainability</title>
+</head>
+<body>
+    <header>
+        <h1>Knowledge Sharing Platform</h1>
+        <p>Share insights, articles, and personal experiences related to climate and gender.</p>
+    </header>
+
+    <main>
+        <section id="share-knowledge">
+            <h2>Share Your Knowledge</h2>
+            <form action="/submit-knowledge" method="POST" enctype="multipart/form-data">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="knowledge">Your Knowledge:</label>
+                <textarea id="knowledge" name="knowledge" rows="4" required></textarea>
+
+                <label for="image">Upload Image (Optional, max 10MB):</label>
+                <input type="file" id="image" name="image" accept="image/jpeg">
+
+                <button type="submit">Share</button>
+            </form>
+        </section>
+
+        <section id="knowledge-feed">
+            <h2>Community Contributions</h2>
+            {% for item in knowledge_list %}
+            <div class="post">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.knowledge }}</p>
+                {% if item.image %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="User Image" class="post-image">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Climate, Gender, and Sustainability Project</p>
+    </footer>
+</body>
+</html>

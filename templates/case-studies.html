@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Case Studies - Climate, Gender & Sustainability</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+        <h1>Climate and Gender Case Studies</h1>
+        <p>Explore open-source case studies focusing on the intersections of climate change and gender.</p>
+    </header>
+
+    <main>
+        <section id="case-studies">
+            <h2>Open-Source Case Studies on Climate, Gender, and Sustainability</h2>
+            <ul>
+                <li><a href="https://www.worldbank.org/en/topic/health/brief/health-and-climate-change" target="_blank">World Bank - Health and Climate Change</a></li>
+                <li><a href="https://www.state.gov/reports/united-states-strategy-to-respond-to-the-effects-of-climate-change-on-women-2023/" target="_blank">U.S. Strategy to Respond to Climate Change and Women</a></li>
+                <li><a href="https://africa.unwomen.org/en/digital-library/publications/2024/09/developments-and-achievements-in-the-uptake-and-use-of-gender-data-the-case-of-kisumu-county-in-kenya" target="_blank">UN Women: The Case of Kisumu County in Kenya</a></li>
+                <li><a href="https://unfccc.int/gender" target="_blank">UNFCCC Gender and Climate Change</a></li>
+                <li><a href="https://africa.unwomen.org/en/digital-library/publications/2022/04/the-impacts-of-covid-19-on-women-and-girls-in-east-and-southern-africa" target="_blank">Impacts of COVID-19 on Women and Girls in East and Southern Africa</a></li>
+                <li><a href="https://www.earthdata.nasa.gov/topics/human-dimensions/social-behavior/environmental-justice" target="_blank">NASA: Environmental Justice</a></li>
+                {% for link in case_study_links %}
+                    <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <h2>Add a New Case Study Link</h2>
+            <form method="POST">
+                <label for="link">Enter the Case Study Link:</label>
+                <input type="text" id="link" name="link" required>
+                <button type="submit">Submit Case Study</button>
+            </form>
+            
+            <a href="/" class="back-button">Back to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Climate, Gender, and Sustainability Project</p>
+    </footer>
+</body>
+</html>

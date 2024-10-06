@@ -1,0 +1,122 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Basic background color */
+    color: #333;
+}
+
+header {
+    background-color: #007b83;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: 10px 0 0;
+}
+
+/* Horizontal navigation styling */
+nav {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    background-color: transparent; /* Make it transparent for the home page */
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+nav a:hover {
+    background-color: #00a896;
+    transform: scale(1.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Case study submission form */
+#submit-case-study {
+    margin: 40px 0;
+}
+
+#submit-case-study h2 {
+    font-size: 1.5rem;
+    color: #007b83;
+    margin-bottom: 20px;
+}
+
+#submit-case-study form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#submit-case-study label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#submit-case-study input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#submit-case-study button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#submit-case-study button:hover {
+    background-color: #007b83;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007b83;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}

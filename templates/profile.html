@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+        <h1>User Profile</h1>
+    </header>
+
+    <main>
+        <section id="profile">
+            <h2>Profile Information</h2>
+            <p><strong>Name:</strong> {{ profile['name'] }}</p>
+            <p><strong>Email:</strong> {{ profile['email'] }}</p>
+            <p><strong>Gender:</strong> {{ profile['gender'] }}</p>
+
+            <a href="{{ url_for('edit_profile') }}" class="button">Edit Profile</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Climate, Gender, and Sustainability Project</p>
+    </footer>
+</body>
+</html>

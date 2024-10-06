@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <form action="/edit-profile" method="POST">
+            <input type="text" name="name" placeholder="Your Name" value="{{ profile.name }}" required>
+            <input type="email" name="email" placeholder="Your Email" value="{{ profile.email }}" required>
+            <select name="gender" required>
+                <option value="" disabled {{ 'selected' if not profile.gender }}>Select Gender</option>
+                <option value="male" {{ 'selected' if profile.gender == 'male' }}>Male</option>
+                <option value="female" {{ 'selected' if profile.gender == 'female' }}>Female</option>
+                <option value="other" {{ 'selected' if profile.gender == 'other' }}>Other</option>
+            </select>
+            <input type="submit" value="Update Profile">
+        </form>
+    </div>
+</body>
+</html>

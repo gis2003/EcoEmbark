@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>SustainShe - Women Empowerment</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/knowledge-sharing">Knowledge Sharing</a>
+            <a href="/case-studies">Case Studies</a>
+            <a href="/profile">Profile</a>
+            <a href="/sustainshe">SustainShe</a> <!-- New SustainShe section -->
+        </nav>
+        <h1>SustainShe: Empowering Women in Sustainability</h1>
+        <p>Explore resources, success stories, and opportunities for women in climate action and sustainability.</p>
+    </header>
+
+    <main>
+        <section id="add-link">
+            <h2>Add a New Link</h2>
+            <form action="/sustainshe" method="POST">
+                <label for="category">Select a Topic:</label>
+                <select id="category" name="topic" required>
+                    <option value="empowerment_resources">Empowerment Resources</option>
+                    <option value="success_stories">Success Stories</option>
+                    <option value="upcoming_events">Upcoming Events</option>
+                    <option value="educational_resources">Educational Resources</option>
+                </select>
+
+                <label for="link">Link URL:</label>
+                <input type="url" id="link" name="link" placeholder="Enter the link" required>
+
+                <button type="submit">Add Link</button>
+            </form>
+        </section>
+
+        <section class="container">
+            <h2>Empowerment Resources</h2>
+            <ul>
+                <li><a href="https://www.unwomen.org/en" target="_blank">UN Women Initiatives</a></li>
+                <li><a href="https://www.womenforclimate.org/" target="_blank">Women for Climate Leadership</a></li>
+                <li><a href="https://sustainabilityleadership.corporate/en" target="_blank">Sustainability Leadership for Women</a></li>
+                <li><a href="https://sheroes.in/" target="_blank">Sheroes: Empowering Women Entrepreneurs</a></li>
+                {% for link in sustain_she_links['empowerment_resources'] %}  <!-- Updated key -->
+                    <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="container">
+            <h2>Success Stories</h2>
+            <p>Learn about women making a difference in climate action:</p>
+            <ul>
+                <li><a href="https://www.climateaction.org/women" target="_blank">Women Leading the Fight Against Climate Change</a></li>
+                <li><a href="https://greengirlsglobal.com/" target="_blank">Green Girls Global: Empowering Girls in Climate Action</a></li>
+                {% for link in sustain_she_links['success_stories'] %}  <!-- Updated key -->
+                    <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="container">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li><a href="https://www.eventbrite.com/" target="_blank">Women in Climate Leadership Webinar</a></li>
+                <li><a href="https://www.meetup.com/" target="_blank">SustainShe Networking Event</a></li>
+                {% for link in sustain_she_links['upcoming_events'] %}  <!-- Updated key -->
+                    <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="container">
+            <h2>Educational Resources</h2>
+            <ul>
+                <li><a href="https://www.coursera.org/" target="_blank">Coursera: Sustainability Courses for Women</a></li>
+                <li><a href="https://www.edx.org/" target="_blank">edX: Gender and Climate Change Programs</a></li>
+                {% for link in sustain_she_links['educational_resources'] %}  <!-- Updated key -->
+                    <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Climate, Gender, and Sustainability Project</p>
+    </footer>
+</body>
+</html>
